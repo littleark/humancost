@@ -216,8 +216,8 @@ d3.csv("data/humancost.csv",function(d){
 					.attr("class","detailed-costs");
 
 	cost_box.append("line")
-				.attr("y1",0)
-				.attr("y2",0)
+				.attr("y1",15)
+				.attr("y2",15)
 				.attr("x1",function(d){
 					return xscale(d.values.extent[0])
 				})
@@ -226,8 +226,8 @@ d3.csv("data/humancost.csv",function(d){
 				})
 
 	cost_box.append("line")
-				.attr("y1",-3)
-				.attr("y2",4)
+				.attr("y1",15)
+				.attr("y2",0)
 				.attr("x1",function(d){
 					return xscale(d.values.extent[0])
 				})
@@ -236,8 +236,8 @@ d3.csv("data/humancost.csv",function(d){
 				})
 
 	cost_box.append("line")
-				.attr("y1",-3)
-				.attr("y2",4)
+				.attr("y1",15)
+				.attr("y2",0)
 				.attr("x1",function(d){
 					return xscale(d.values.extent[1])
 				})
@@ -247,8 +247,8 @@ d3.csv("data/humancost.csv",function(d){
 	
 	var avg=cost_box.append("line")
 					.attr("class","avg")
-					.attr("y1",-10)
-					.attr("y2",10)
+					.attr("y1",15)
+					.attr("y2",9)
 					.attr("x1",function(d){
 						return xscale(d.values[average])
 					})

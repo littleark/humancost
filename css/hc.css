@@ -349,7 +349,11 @@ g.detailed-cost rect {
 	fill-opacity:0.7;
 	stroke-width:0;
 }
+g.detailed-cost:hover rect {
+	fill-opacity:1;
+}
 g.detailed-cost rect.bg {
+	fill:#333 !important;
 	fill-opacity:0;
 }
 g.detailed-cost line.l2t,
