@@ -101,12 +101,16 @@ body {
 	background-color: #CC1559;
 	color:#fff;
 }
+.page.blue {
+	background-color: royalblue;
+	color:#fff;
+}
 .page.gold {
 	background-color: gold;
 	color:#000;
 }
 
-#slides.last #p6 {
+#slides.last #p5 {
 	overflow: visible;
 }
 #header {
@@ -569,14 +573,60 @@ g#legend circle {
 	margin: 5px 0;
 }
 #contents {
-	width:960px;
-	margin:0px auto 20px;
+	width:800px;
+	margin:50px auto 20px;
 }
-
+#contents a {
+	text-decoration: none;
+	color:#8fd4d9;
+}
+.paragraph {
+	margin-bottom:30px;
+}
+.paragraph h5 {
+	font-family: 'Raleway', serif;
+	font-size: 20px;
+	font-weight:300;
+	text-transform: uppercase;
+	margin:0 0 5px;
+	color:#8fd4d9;
+}
+.paragraph p {
+	margin: 0;
+	color:#ddd;
+	font-size:15px;
+}
 #source {
 	margin:10px 0;
 }
 
 #footer {
+	font-size:13px;
 	margin:10px 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#footer #licence {
+	font-size: 11px;
+	width:280px;
+	margin: 0 auto;
+	border-top:1px solid #444;
+	text-align: center;
+	margin-top: 20px;
+	padding-top: 10px;
+}
+#footer #licence div{
+	text-align: left;
+}
+#footer #licence a {
+	color:#aaa;
+	text-decoration: none;
+}
+.no-touch #footer #licence a:hover {
+	color:gold;
+}
+#footer #licence a.cc {
+	float:left;
+	margin-right: 10px;
 }

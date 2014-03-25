@@ -9,7 +9,7 @@ function Slides() {
 					d3.select("#slides #p"+i)
 						.classed("active",false)
 
-					d3.select("#slides").classed("last",i==5)
+					d3.select("#slides").classed("last",i==4)
 
 
 
@@ -533,7 +533,7 @@ d3.csv("data/humancost.csv",function(d){
 	legend.append("text")
 			.attr("x",lw*3/4)
 			.attr("y",-20)
-			.text("STORY");
+			.text("PRICE");
 
 	legend.append("text")
 			.attr("x",-10)
