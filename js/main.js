@@ -333,7 +333,7 @@ d3.csv("data/humancost.csv",function(d){
 				+
 				d.culture_context+", "
 				+
-				d.when
+				(d.age=="modern"?d.when:agesNames[d.age].age)
 		);
 		dialog.note.html(d.note);
 
