@@ -11,7 +11,7 @@ function Slides() {
 
 					d3.select("#slides").classed("last",i==5)
 
-					
+
 
 				})
 
@@ -51,7 +51,7 @@ d3.csv("data/humancost.csv",function(d){
 		top:50,
 		bottom:100,
 		left:75,
-		right:70
+		right:30
 	};
 	var padding={
 		top:20,
