@@ -397,6 +397,7 @@ g#legend circle {
 
 #dialog {
 	position: absolute;
+	display: none;
 	width:300px;
 	left:400px;
 	bottom:300px;
