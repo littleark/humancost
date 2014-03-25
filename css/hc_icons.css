@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'hc';
-  src: url('../font/hc.eot?10163981');
-  src: url('../font/hc.eot?10163981#iefix') format('embedded-opentype'),
-       url('../font/hc.woff?10163981') format('woff'),
-       url('../font/hc.ttf?10163981') format('truetype'),
-       url('../font/hc.svg?10163981#hc') format('svg');
+  font-family: 'hc_icons';
+  src: url('../font/hc_icons.eot?42344254');
+  src: url('../font/hc_icons.eot?42344254#iefix') format('embedded-opentype'),
+       url('../font/hc_icons.woff?42344254') format('woff'),
+       url('../font/hc_icons.ttf?42344254') format('truetype'),
+       url('../font/hc_icons.svg?42344254#hc_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,14 +13,14 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'hc';
-    src: url('../font/hc.svg?10163981#hc') format('svg');
+    font-family: 'hc_icons';
+    src: url('../font/hc_icons.svg?42344254#hc_icons') format('svg');
   }
 }
 */
  
  [class^="mk-"]:before, [class*=" mk-"]:before {
-  font-family: "hc";
+  font-family: "hc_icons";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -53,5 +53,8 @@
 .mk-plus-circled:before { content: '\e802'; } /* '' */
 .mk-minus-circled:before { content: '\e803'; } /* '' */
 .mk-down-open:before { content: '\e804'; } /* '' */
+.mk-twitter:before { content: '\e805'; } /* '' */
+.mk-facebook:before { content: '\e806'; } /* '' */
+.mk-gplus:before { content: '\e807'; } /* '' */
 .mk-female:before { content: '\e800'; } /* '' */
 .mk-male:before { content: '\e801'; } /* '' */
