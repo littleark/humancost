@@ -353,6 +353,26 @@ d3.csv("data/humancost.csv",function(d){
 		.classed("expanded",false)
 	}
 
+	function highlightCosts(t) {
+			if(!t) {
+				costs.classed("dimmed",false);
+				detailed_cost_box.selectAll("g.detailed-cost")
+										.classed("dimmed",false);
+				return;
+			}
+			costs
+				.filter(function(d){
+					return d.type!=t;
+				})
+				.classed("dimmed",true)
+
+			detailed_cost_box.selectAll("g.detailed-cost")
+				.filter(function(d){
+					return d.type!=t;
+				})
+				.classed("dimmed",true)
+	}
+
 	costs
 		.append("line")
 		.attr("class","gauge")
@@ -938,6 +958,8 @@ d3.csv("data/humancost.csv",function(d){
 
 	function Types() {
 
+		var selected=0;
+
 		var type_paddings={
 			top:-10,
 			bottom:40,
@@ -1042,6 +1064,28 @@ d3.csv("data/humancost.csv",function(d){
   									.attr("transform",function(d){
   										return "translate(0,"+type_yscale(d.id)+")";
   									})
+  									.on("click",function(d){
+  										
+  										if(selected==d.id) {
+  											selected=null;
+  											highlightCosts();
+  											highlightPaths()
+  										} else {
+  											selected=d.id;
+  											highlightCosts();
+  											highlightPaths();
+  											highlightCosts(d.id);
+  											highlightPaths(d.id);
+  										}
+  										
+  									})
+
+  		types_boxes.append("rect")
+  						.attr("x",0)
+  						.attr("y",-20)
+  						.attr("width",120)
+  						.attr("height",30)
+  						.style("fill-opacity",0)
 
   		types_boxes.append("text")
   						.attr("x",0)
@@ -1084,6 +1128,30 @@ d3.csv("data/humancost.csv",function(d){
   								return p;
   							})
 
+  		function highlightPaths(t) {
+  			if(!t) {
+				types_connections
+					.selectAll("path")
+					.classed("dimmed",false);
+				types_boxes
+					.classed("dimmed",false);
+				return;
+			}
+			types_connections
+				.selectAll("path")
+				.filter(function(d){
+					return d.from!=t;
+				})
+				.classed("dimmed",true);
+
+			types_boxes
+					.filter(function(d){
+						console.log("@@@@@@@@@@@@@@@@@@@",t,d.id)
+						console.log(this)
+						return d.id!=t;
+					})
+					.classed("dimmed",true);
+  		}
   		this.updatePaths=function(index,delta,duration) {
 
 
