@@ -25,12 +25,17 @@ body {
 	scrollbar-shadow-color: #000;
 	scrollbar-dark-shadow-color: #000;
 }
+#header {
+	width:960px;
+	margin:10px auto 30px;
+	border-bottom: 1px solid #333;
+}
 h1 {
 	font-family: 'Raleway', serif;
 	font-size: 30px;
 	font-weight:300;
-	margin: 0;
-	margin-bottom: 5px;
+	margin: 0 0 5px;
+	
 	padding: 0;
 	text-align: center;
 	color:#fff;
@@ -41,7 +46,7 @@ h2 {
 	font-size: 15px;
 	font-weight:300;
 	margin: 0;
-	margin-bottom: 30px;
+	margin-bottom: 5px;
 	padding: 0;
 	text-align: center;
 	color:#fff;

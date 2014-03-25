@@ -20,7 +20,7 @@ d3.csv("data/humancost.csv",function(d){
 	console.log(data);
 
 	var WIDTH=window.innerWidth-20,
-		HEIGHT=window.innerHeight-90;
+		HEIGHT=window.innerHeight-105;
 
 	WIDTH=(WIDTH>1600?1600:WIDTH);
 	WIDTH=(WIDTH<960?960:WIDTH);
