@@ -344,10 +344,13 @@ d3.csv("data/humancost.csv",function(d){
 		} else {
 			dialog.more.html("")
 		}
+		var x=(xscale(d.inflation_adjusted)-150+margins.left+padding.left),
+			dx=(x+300-WIDTH);
+
 
 		dialog.el.style({
 			"display":"block",
-			"left":(xscale(d.inflation_adjusted)-150+margins.left+padding.left)+"px",
+			"left":(x-(dx>0?dx:0))+"px",
 			"bottom":((HEIGHT-yscale(d.age)-margins.top-padding.top+20)+(details.getDelta(d.age)))+"px"
 		})
 		.classed("expanded",false)
@@ -1110,7 +1113,7 @@ d3.csv("data/humancost.csv",function(d){
   			x1=Math.round(x1);
   			y0=Math.round(y0);
   			y1=Math.round(y1);
-  			
+
   			var path="M"+x0+","+y0;
 
   			path+="C"+((x0+x1)/2)+","+y0+","+((x0+x1)/2)+","+y1+","+x1+","+y1;
