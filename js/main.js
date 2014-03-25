@@ -532,7 +532,7 @@ d3.csv("data/humancost.csv",function(d){
 		.append("g")
 		.attr("class","symbol")
 		.attr("transform",function(d){
-			var x=150;//ageLabels.select("#title_"+d).node().getComputedTextLength()+18;
+			var x=ageLabels.select("#title_"+d).node().getComputedTextLength()+18;
 			return "translate("+x+",-6)"	
 		});
 
