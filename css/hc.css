@@ -296,6 +296,11 @@ g#types g.type.dimmed text {
 	fill-opacity:0.2;
 }
 
+g#types g.type:hover rect,
+g#types g.type:hover text {
+	fill-opacity:1;
+}
+
 g#connections path {
 	fill:none !important;
 	stroke:#815d43;
