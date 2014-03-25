@@ -144,7 +144,7 @@ g.cost rect {
 
 }
 g.cost.dimmed circle {
-	fill-opacity:0.1;
+	fill-opacity:0.2;
 }
 g.cost.hidden circle,
 g.cost.hidden rect {
@@ -357,7 +357,7 @@ g.detailed-cost {
 }
 g.detailed-cost.dimmed rect,
 g.detailed-cost.dimmed circle {
-	fill-opacity:0.1;
+	fill-opacity:0.2;
 }
 g.detailed-cost line {
 	fill:none;
