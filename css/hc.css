@@ -98,7 +98,7 @@ svg line {
 	shape-rendering: crispEdges;	
 }
 svg text {
-	font-family: sans-serif;
+	font-family: 'Raleway', sans-serif;
 	font-size: 15px;
 }
 svg .symbol circle {
