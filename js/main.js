@@ -23,6 +23,7 @@ d3.csv("data/humancost.csv",function(d){
 		HEIGHT=window.innerHeight-70;
 
 	WIDTH=(WIDTH>1600?1600:WIDTH);
+	HEIGHT=(HEIGHT>800?800:HEIGHT);
 
 	var margins={
 		top:50,
