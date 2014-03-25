@@ -512,7 +512,7 @@ d3.csv("data/humancost.csv",function(d){
 			.attr("class","period")
 			.attr("y",20)
 			.attr("x",0)
-			.html(function(d){
+			.text(function(d){
 				return agesNames[d].age;
 			})
 
