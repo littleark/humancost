@@ -131,6 +131,9 @@ path.avg {
 	stroke-width:2;
 	stroke-opacity:0.5;
 }
+g.cost circle {
+	cursor: pointer;
+}
 g.cost circle,
 g.cost rect {
 	fill:#815d43;
@@ -390,6 +393,63 @@ g#legend text {
 }
 g#legend circle {
 	fill: #999;
+}
+
+#dialog {
+	position: absolute;
+	width:300px;
+	left:400px;
+	bottom:300px;
+	padding:10px;
+	background: rgba(255,255,255,0.8);
+	text-align: center;
+	color:#000;
+	height:85px;
+	overflow: hidden;
+
+	-webkit-transition: left 200ms ease, height 500ms ease;
+	-moz-transition: left 200ms ease, height 500ms ease;
+    -ms-transition: left 200ms ease, height 500ms ease;
+    -o-transition: left 200ms ease, height 500ms ease;
+	transition: left 200ms ease, height 500ms ease;
+
+	cursor:pointer;
+}
+#dialog.expanded {
+	height:auto;
+	cursor:auto;
+}
+#dialog h3,
+#dialog h4,
+#dialog h5 {
+	font-family: 'Raleway', serif;
+	font-size: 16px;
+	font-weight:300;
+	margin:0;
+	padding:0;
+	text-align: center;
+	text-transform: uppercase;
+}
+#dialog h3 {
+	font-size:26px;
+	text-transform: uppercase;
+}
+#dialog h4 {
+	margin-top:5px;
+}
+#dialog h5 {
+	font-size: 15px;
+}
+#dialog span.currency {
+	font-family: 'Raleway', serif;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+#dialog p {
+	font-family: 'Raleway', serif;
+	font-size: 13px;
+	text-align: left;
+	margin: 5px 0;
 }
 #contents {
 	width:960px;

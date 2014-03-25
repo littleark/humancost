@@ -66,7 +66,7 @@ d3.csv("data/humancost.csv",function(d){
 		}
 	};
 	
-	
+	var price_format=d3.format("$,.0f");
 	//console.log(data.map(function(d){return d.date;}))
 
 	var avgByYear = d3.nest()
@@ -259,6 +259,19 @@ d3.csv("data/humancost.csv",function(d){
 						return xscale(d.values[average])
 					})
 
+	var dialog={
+		el:d3.select("#dialog"),
+		price:d3.select("#dialog h3"),
+		oprice:d3.select("#dialog span.currency"),
+		details:d3.select("#dialog h4"),
+		gender_where_when:d3.select("#dialog h5"),
+		note:d3.select("#dialog p.note"),
+		more:d3.select("#dialog p.more")
+	}
+
+
+
+	var tm=null;
 	var costs=cost_box.selectAll("g.cost")
 				.data(function(d){
 					return d.values.costs;
@@ -276,7 +289,55 @@ d3.csv("data/humancost.csv",function(d){
 						var y=0;//yscale(1);//1
 
 						return "translate("+x+","+y+")";
-					});
+					})
+					.on("mouseover",function(d){
+
+						if(tm) {
+							clearTimeout(tm);
+						}
+
+						dialog.price.html((d.l_h!="")?d.l_h:price_format(d.inflation_adjusted));
+						dialog.oprice.html(d.original_cost?"(original cost "+d.original_cost+")":"&nbsp;");
+						dialog.details.html(d.detail);
+						dialog.gender_where_when.html(
+								(d.gender_id!="b"?d.gender+", ":"")
+								+
+								d.culture_context+", "
+								+
+								d.when
+						);
+						dialog.note.html(d.note);
+
+						dialog.el.style({
+							"display":"block",
+							"left":(xscale(d.inflation_adjusted)-150+margins.left+padding.left)+"px",
+							"bottom":(HEIGHT-yscale(d.age)-margins.top-padding.top+20)+"px"
+						})
+						.classed("expanded",false)
+					})
+					.on("mouseout",function(d){
+						tm=setTimeout(function(){
+							dialog.el.style("display","none")	
+						},500)
+					})
+					.on("click",function(d){
+						dialog.el.classed("expanded",true);
+					})
+
+	dialog.el
+		.on("mouseover",function(d){
+			if(tm) {
+				clearTimeout(tm);
+			}
+		})
+		.on("mouseout",function(d){
+			tm=setTimeout(function(){
+				dialog.el.style("display","none")	
+			},500)
+		})
+		.on("click",function(d){
+			dialog.el.classed("expanded",true);
+		})
 
 	costs
 		.append("line")
@@ -299,9 +360,9 @@ d3.csv("data/humancost.csv",function(d){
 			if(d.l_h!="") {
 				return d.l_h;
 			}
-			return d3.format("$,.0f")(d.inflation_adjusted);
+			return price_format(d.inflation_adjusted);
 		})
-
+	/*
 	costs
 		.append("text")
 		.attr("class","tgauge")
@@ -311,9 +372,9 @@ d3.csv("data/humancost.csv",function(d){
 			if(d.l_h!="") {
 				return d.l_h;
 			}
-			return d3.format("$,.0f")(d.inflation_adjusted);
+			return price_format(d.inflation_adjusted);
 		})
-
+	
 	costs
 		.append("text")
 		.attr("class","tgauge description")
@@ -322,7 +383,7 @@ d3.csv("data/humancost.csv",function(d){
 		.text(function(d){
 			return (d.age=="modern"?d.culture_context+", ":"")+d.detail+" "+(d.gender_id!="b"?d.gender:"");
 		})
-
+	*/
 	costs
 		.append("circle")
 		.attr("cy",function(d){
@@ -337,7 +398,7 @@ d3.csv("data/humancost.csv",function(d){
 					.orient("bottom")
 					//.ticks(20, ",.1s$")
 					.tickValues([1,10,100,1000,10000,100000])
-					.tickFormat(d3.format("$,.0f"))
+					.tickFormat(price_format)
     				.scale(xscale)
 
     
