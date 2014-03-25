@@ -71,7 +71,7 @@ body {
 }
 .page .next {
 	position: absolute;
-	bottom:0;
+	bottom:40px;
 	height:60px;
 	width: 100%;
 	text-align: center;
