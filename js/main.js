@@ -311,7 +311,7 @@ d3.csv("data/humancost.csv",function(d){
 						dialog.el.style({
 							"display":"block",
 							"left":(xscale(d.inflation_adjusted)-150+margins.left+padding.left)+"px",
-							"bottom":(HEIGHT-yscale(d.age)-margins.top-padding.top+20)+"px"
+							"bottom":((HEIGHT-yscale(d.age)-margins.top-padding.top+20)+(details.getDelta(d.age)))+"px"
 						})
 						.classed("expanded",false)
 					})
@@ -557,6 +557,7 @@ d3.csv("data/humancost.csv",function(d){
 
 	function DetailedView() {
 		var current=null;
+		var index=-1;
 		var self=this;
 		var DURATION=1000;
 		var delta=0;
@@ -648,6 +649,7 @@ d3.csv("data/humancost.csv",function(d){
 			var tmp_current=current;
 			
 			current=null;
+			index=-1;
 			delta=0;
 
 			detailedCosts
@@ -724,6 +726,15 @@ d3.csv("data/humancost.csv",function(d){
 
 			illegalTypes.updatePaths(-1,0,DURATION)
 		}
+
+		this.getDelta=function(age) {
+			console.log(delta)
+			if(age && index>-1) {
+				return (d3.keys(agesNames).indexOf(age)<=index)?delta:0;
+			}
+			return delta;
+		}
+
 		this.show=function(age) {
 
 			if(current==age) {
@@ -738,9 +749,8 @@ d3.csv("data/humancost.csv",function(d){
 			}
 
 			current=age;
-
-			var index=-1,
-				group=null;
+			index=-1;
+			var group=null;
 
 			
 
