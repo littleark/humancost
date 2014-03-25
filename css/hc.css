@@ -374,6 +374,23 @@ g.detailed-cost:hover line.l2b {
 	display: block;
 }
 
+g#legend {
+
+}
+g#legend line {
+	fill: none;
+	stroke: #aaa;
+	stroke-width: 1;
+}
+g#legend text {
+	fill: #999;
+	font-size: 11px;
+	text-transform: uppercase;
+	text-anchor:middle;
+}
+g#legend circle {
+	fill: #999;
+}
 #contents {
 	width:960px;
 	margin:0px auto 20px;

@@ -20,10 +20,13 @@ d3.csv("data/humancost.csv",function(d){
 	console.log(data);
 
 	var WIDTH=window.innerWidth-20,
-		HEIGHT=window.innerHeight-70;
+		HEIGHT=window.innerHeight-90;
 
 	WIDTH=(WIDTH>1600?1600:WIDTH);
+	WIDTH=(WIDTH<960?960:WIDTH);
+
 	HEIGHT=(HEIGHT>800?800:HEIGHT);
+	HEIGHT=(HEIGHT<400?400:HEIGHT);
 
 	var margins={
 		top:50,
@@ -342,19 +345,80 @@ d3.csv("data/humancost.csv",function(d){
 	
 	xaxis.append("text")
 			.attr("x",-5)
-			.attr("y",35)
+			.attr("y",40)
 			.text("Price of a life in history")
 	xaxis.append("text")
 			.attr("class","note")
 			.attr("x",-5)
-			.attr("y",47)
-			.text("Prince in US $ (Inflation Adjusted)")
+			.attr("y",54)
+			.text("Prices in US $ (Inflation Adjusted)")
 	xaxis.append("text")
 			.attr("class","note")
 			.attr("x",-5)
-			.attr("y",59)
+			.attr("y",68)
 			.text("logarithmic scale")
+
+	var lw=150;
+	var legend=xaxis.append("g")
+			.attr("id","legend")
+			.attr("transform","translate("+(xscale.range()[1]-lw)+",85)");
+
+	legend.append("line")
+			.attr("x1",-10)
+			.attr("y1",-10)
+			.attr("x2",lw+10)
+			.attr("y2",-10)
+			.style("stroke-dasharray","1,5")
+
+	legend.append("line")
+			.attr("x1",0)
+			.attr("y1",0)
+			.attr("x2",lw)
+			.attr("y2",0)
+	legend.append("line")
+			.attr("x1",0)
+			.attr("y1",0)
+			.attr("x2",0)
+			.attr("y2",-10)
+	legend.append("line")
+			.attr("x1",lw)
+			.attr("y1",0)
+			.attr("x2",lw)
+			.attr("y2",-10)
+	legend.append("line")
+			.attr("x1",lw/2)
+			.attr("y1",0)
+			.attr("x2",lw/2)
+			.attr("y2",-6)
+
+	legend.append("text")
+			.attr("x",lw)
+			.attr("y",11)
+			.text("MIN");
+	legend.append("text")
+			.attr("x",0)
+			.attr("y",11)
+			.text("MAX");
+	legend.append("text")
+			.attr("x",lw/2)
+			.attr("y",11)
+			.text("MEDIAN");
+
+	legend.append("circle")
+			.attr("cx",lw*3/4)
+			.attr("cy",-10)
+			.attr("r",8)
 	
+	legend.append("text")
+			.attr("x",lw*3/4)
+			.attr("y",-20)
+			.text("STORY");
+
+	legend.append("text")
+			.attr("x",-10)
+			.attr("y",-30)
+			.style("text-anchor","start")
+			.text("HOW TO READ:");	
 
 	var ageLabels=yaxis.selectAll("g")
 			.data(ages.map(function(d){return d.key}))
