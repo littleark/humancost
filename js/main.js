@@ -1,3 +1,22 @@
+function Slides() {
+
+	d3.select("#slides")
+		.selectAll(".next")
+			.select("a")
+				.on("click",function(d,i){
+					d3.event.preventDefault();
+					
+					d3.select("#slides #p"+i)
+						.classed("active",false)
+
+					d3.select("#slides").classed("last",i==5)
+
+					
+
+				})
+
+}
+var story=new Slides();
 d3.csv("data/humancost.csv",function(d){
 
 	d.inflation_adjusted=+d.inflation_adjusted;
@@ -20,7 +39,7 @@ d3.csv("data/humancost.csv",function(d){
 	console.log(data);
 
 	var WIDTH=window.innerWidth-20,
-		HEIGHT=window.innerHeight-105;
+		HEIGHT=window.innerHeight-115;
 
 	WIDTH=(WIDTH>1600?1600:WIDTH);
 	WIDTH=(WIDTH<960?960:WIDTH);
@@ -324,6 +343,10 @@ d3.csv("data/humancost.csv",function(d){
 			dialog.el.classed("expanded",true);
 		})
 
+	function hideDialog() {
+		dialog.el.style("display","none");
+	}
+
 	function showDialog(d){
 		dialog.price.html((d.l_h!="")?d.l_h:price_format(d.inflation_adjusted));
 		dialog.oprice.html(d.original_cost?"(original cost "+d.original_cost+")":"&nbsp;");
@@ -535,6 +558,9 @@ d3.csv("data/humancost.csv",function(d){
 					$this.classed("selected",!selected);
 
 					details.show(d);
+
+					hideDialog();
+
 				})
 
 	ageLabels

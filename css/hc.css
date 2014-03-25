@@ -9,6 +9,8 @@ html,body {
 	font-family: 'PT Sans', sans-serif;
 	color:#eee;
 	font-size:14px;
+
+	height: 100%;
 }
 a {
 	color:#CC1559;
@@ -24,6 +26,83 @@ body {
 	scrollbar-arrow-color: #666;
 	scrollbar-shadow-color: #000;
 	scrollbar-dark-shadow-color: #000;
+}
+#slides .page:nth-child(1) {
+	z-index: 10;
+}
+#slides .page:nth-child(2) {
+	z-index: 9;
+}
+#slides .page:nth-child(3) {
+	z-index: 8;
+}
+#slides .page:nth-child(4) {
+	z-index: 7;
+}
+#slides .page:nth-child(5) {
+	z-index: 6;
+}
+#slides .page:nth-child(6) {
+	z-index: 5;
+}
+#slides .page:nth-child(7) {
+	z-index: 4;
+}
+.page {
+	width: 100%;
+	background-color: #000;
+	position: absolute;
+	height: 0;
+	overflow: hidden;
+	
+	-webkit-transition: height 0.9s ease;
+	-moz-transition: height 0.9s ease;
+	-o-transition: height 0.9s ease;
+	transition: height 0.9s ease;
+
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.page.active {
+	height: 100%;
+}
+.page .next {
+	position: absolute;
+	bottom:0;
+	height:60px;
+	width: 100%;
+	text-align: center;
+}
+.page .next a {
+	color:inherit;
+	font-size: 60px;
+}
+.page h1 {
+	font-size:40px;
+	font-weight: 700;
+	text-align: center;
+	color:inherit;
+
+	height: 50px;
+	position: relative;
+	top: 45%;
+	transform:translateY(-55%);
+
+	margin:0 15%;
+}
+.page.white {
+	background-color: #fff;
+	color:#000;
+}
+.page.red {
+	background-color: #CC1559;
+	color:#fff;
+}
+#slides.last #p6 {
+	overflow: visible;
 }
 #header {
 	width:960px;
