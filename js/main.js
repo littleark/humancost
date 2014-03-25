@@ -337,6 +337,14 @@ d3.csv("data/humancost.csv",function(d){
 		);
 		dialog.note.html(d.note);
 
+		if(d.link1) {
+			var link1="<a href='"+d.link1+"' target='_blank'>here</a>";
+			var link2=d.link2?" or <a href='"+d.link2+"' target='_blank'>here</a>":"";
+			dialog.more.html("Read more "+link1+link2)
+		} else {
+			dialog.more.html("")
+		}
+
 		dialog.el.style({
 			"display":"block",
 			"left":(xscale(d.inflation_adjusted)-150+margins.left+padding.left)+"px",
