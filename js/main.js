@@ -541,17 +541,26 @@ d3.csv("data/humancost.csv",function(d){
 			.attr("cy",0)
 			.attr("r",8);
 
-	plus.append("text")
+	plus.append("line")
 			.attr("class","plus")
-			.attr("x",0)
-			.attr("y",5)
-			.text("+");
+			.attr("x1",-4)
+			.attr("x2",4)
+			.attr("y1",0)
+			.attr("y2",0);
 
-	plus.append("text")
+	plus.append("line")
+			.attr("class","plus")
+			.attr("x1",0)
+			.attr("x2",0)
+			.attr("y1",-4)
+			.attr("y2",4);
+
+	plus.append("line")
 			.attr("class","minus")
-			.attr("x",-0.5)
-			.attr("y",4)
-			.text("-")
+			.attr("x1",-4)
+			.attr("x2",4)
+			.attr("y1",0)
+			.attr("y2",0);
 
 	
 

@@ -106,18 +106,13 @@ svg .symbol circle {
 	stroke:#777 !important;
 	stroke-width:2 !important;
 }
-svg .symbol text {
-	fill:#777 !important;
-	font-weight: bold !important;
-	text-anchor:middle !important;
-	font-size: 14px !important;
-	font-family: sans-serif !important;
+svg .symbol line.plus {
+	stroke:#777;
+	stroke-width:2;
 }
-svg .symbol text.plus {
-	font-size: 14px !important;
-}
-svg .symbol text.minus {
-	font-size: 17px !important;
+svg .symbol line.minus {
+	stroke:#777;
+	stroke-width:2;
 }
 line.axis {
 	fill:none;
@@ -253,10 +248,8 @@ g#yaxis g.title {
 g#yaxis g.title:hover text {
 	fill:#fff;
 }
-g#yaxis g.title:hover .symbol text {
-	fill:#fff !important;
-}
-g#yaxis g.title:hover .symbol circle {
+g#yaxis g.title:hover .symbol circle,
+g#yaxis g.title:hover .symbol line {
 	stroke:#fff !important;
 }
 g#yaxis g.title .minus {
