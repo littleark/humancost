@@ -405,7 +405,7 @@ g#legend circle {
 	background: rgba(255,255,255,0.8);
 	text-align: center;
 	color:#000;
-	height:85px;
+	height:80px;
 	overflow: hidden;
 
 	-webkit-transition: left 200ms ease, height 500ms ease;
