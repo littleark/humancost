@@ -279,7 +279,7 @@ g#types .type {
 }
 g#types .type text {
 	text-transform: uppercase;
-	fill:#eee;
+	fill:#ccc;
 	font-size: 16px;
 	text-anchor:start;
 	font-weight: 300;
@@ -300,7 +300,9 @@ g#types g.type:hover rect,
 g#types g.type:hover text {
 	fill-opacity:1;
 }
-
+g#types g.type:hover text {
+	fill:#fff;
+}
 g#connections path {
 	fill:none !important;
 	stroke:#815d43;
