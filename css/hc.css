@@ -91,7 +91,7 @@ body {
 	top: 45%;
 	transform:translateY(-55%);
 
-	margin:0 15%;
+	margin:0 10%;
 }
 .page.white {
 	background-color: #fff;
@@ -101,6 +101,11 @@ body {
 	background-color: #CC1559;
 	color:#fff;
 }
+.page.gold {
+	background-color: gold;
+	color:#000;
+}
+
 #slides.last #p6 {
 	overflow: visible;
 }
