@@ -1,0 +1,384 @@
+html {
+	overflow-y: scroll;
+}
+html,body {
+	margin:0;
+	padding:0;
+	background-color: black;
+
+	font-family: 'PT Sans', sans-serif;
+	color:#eee;
+	font-size:14px;
+}
+a {
+	color:#CC1559;
+}
+::-webkit-scrollbar-thumb:vertical { width:10px; height:10px; background-color: #666; }
+::-webkit-scrollbar { width:10px; height:5px; background: #000; margin-right:5px; }
+body {
+	scrollbar-base-color: #000;
+	scrollbar-base-color: #666;
+	scrollbar-3dlight-color: #000;
+	scrollbar-highlight-color: #000;
+	scrollbar-track-color: #000;
+	scrollbar-arrow-color: #666;
+	scrollbar-shadow-color: #000;
+	scrollbar-dark-shadow-color: #000;
+}
+h1 {
+	font-family: 'Raleway', serif;
+	font-size: 30px;
+	font-weight:300;
+	margin: 0;
+	margin-bottom: 5px;
+	padding: 0;
+	text-align: center;
+	color:#fff;
+	text-transform: uppercase;
+}
+h2 {
+	font-family: 'Raleway', serif;
+	font-size: 15px;
+	font-weight:300;
+	margin: 0;
+	margin-bottom: 30px;
+	padding: 0;
+	text-align: center;
+	color:#fff;
+	text-transform: uppercase;
+}
+#headers {
+	display:none;
+	position: absolute;
+	background-color: #000;
+	top:215px;
+	height:60px;
+	width: 100%;
+}
+.fixed #headers {
+	position: fixed;
+	top:0px;
+}
+#headers ul {
+	width: 910px;
+	height:60px;
+	padding: 0;
+	list-style: none;
+	margin: 0 auto;
+}
+#headers ul li {
+	float: left;
+	width:20%;
+	text-align:center;
+	text-transform: uppercase;
+	color: #eee;
+	font-family: 'Raleway', serif;
+	font-size: 16px;
+	font-weight: 300;
+}
+#headers ul li span {
+	font-size:14px;
+	color:#ddd;
+}
+#headers ul li i {
+	font-size:16px;
+	color:#888;
+}
+#costs {
+	width:100%;
+	max-width: 1600px;
+	margin: 0 auto;
+	position: relative;
+}
+svg {
+		
+}
+svg rect,
+svg line {
+	shape-rendering: crispEdges;	
+}
+svg text {
+	font-family: 'Raleway', serif;
+	font-size: 15px;
+}
+svg .symbol circle {
+	fill:#000 !important;
+	stroke:#777 !important;
+	stroke-width:2 !important;
+}
+svg .symbol text {
+	fill:#777 !important;
+	font-weight: bold !important;
+	text-anchor:middle !important;
+	font-size: 14px !important;
+	font-family: sans-serif !important;
+}
+svg .symbol text.plus {
+	font-size: 14px !important;
+}
+svg .symbol text.minus {
+	font-size: 17px !important;
+}
+line.axis {
+	fill:none;
+	stroke:#333;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+path.avg {
+	fill:none;
+	stroke:#000;
+	stroke-width:2;
+	stroke-opacity:0.5;
+}
+g.cost circle,
+g.cost rect {
+	fill:#815d43;
+	stroke:none;
+	stroke-width:0;
+	fill-opacity:0.7;
+
+	-webkit-transition: fill-opacity 500ms ease;
+	-moz-transition: fill-opacity 500ms ease;
+    -ms-transition: fill-opacity 500ms ease;
+    -o-transition: fill-opacity 500ms ease;
+	transition: fill-opacity 500ms ease;
+
+}
+g.cost.hidden circle,
+g.cost.hidden rect {
+	fill-opacity:0;
+}
+g.cost:hover circle {
+	stroke:#fff !important;
+	stroke-width:2;
+	fill-opacity:1 !important;
+
+	-webkit-transition: fill-opacity 10ms ease;
+	-moz-transition: fill-opacity 10ms ease;
+    -ms-transition: fill-opacity 10ms ease;
+    -o-transition: fill-opacity 10ms ease;
+	transition: fill-opacity 10ms ease;
+}
+g.cost line.gauge {
+	display: none;
+	stroke-dasharray: 1, 3;
+	stroke:#999;
+}
+g.cost text.gauge,
+g.cost text.tgauge {
+	display: none;
+	fill:#999;
+	font-size: 13px;
+}
+g.cost text.tgauge {
+	fill:#ccc;
+}
+g.cost text.gauge.description,
+g.cost text.tgauge.description {
+	text-anchor:end;
+	text-transform: uppercase;
+}
+g.cost:hover line.gauge,
+g.cost:hover text.gauge,
+g.cost.hover text.gauge,
+g.cost:hover text.tgauge,
+g.cost.hover text.tgauge {
+	display: block
+}
+g.cost:hover line {
+	display: block
+}
+g.costs line {
+	fill:none;
+	stroke:#aaa;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+g.cost rect.joint {
+	fill:#fff !important;
+}
+
+g#xaxis path {
+	fill:none;
+	stroke:#999;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+
+g#xaxis .tick line {
+	fill:none;
+	stroke:#999;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+g#xaxis text {
+	fill:#999;
+	font-size:13px;
+	text-transform: uppercase;
+}
+g#xaxis text.note {
+	fill:#666;
+	font-size:12px;
+	text-transform: uppercase;
+}
+
+g#yaxis path {
+	fill:none;
+	stroke:none;
+}
+
+g#yaxis .tick line {
+	fill:none;
+	stroke:none;
+}
+
+g#yaxis text {
+	text-transform: uppercase;
+	fill:#ccc;
+	font-size: 16px;
+	text-anchor:start;
+	font-weight: 300;
+}
+g#yaxis text.period {
+	font-size:14px;
+	color:#ddd;
+}
+g#yaxis g.title {
+	cursor: pointer;
+}
+g#yaxis g.title:hover text {
+	fill:#fff;
+}
+g#yaxis g.title:hover .symbol text {
+	fill:#fff !important;
+}
+g#yaxis g.title:hover .symbol circle {
+	stroke:#fff !important;
+}
+g#yaxis g.title .minus {
+	display:none;
+}
+g#yaxis g.title.selected .minus {
+	display:block;
+}
+g#yaxis g.title.selected .plus {
+	display:none;
+}
+g#yaxis g.title rect {
+	fill-opacity:0;
+}
+g#grid line {
+	fill:none;
+	stroke:#666;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+	stroke-dasharray: 1, 5;
+}
+
+g#types .type text {
+	text-transform: uppercase;
+	fill:#eee;
+	font-size: 16px;
+	text-anchor:start;
+	font-weight: 300;
+}
+
+g#types .type rect {
+	fill:#815d43;
+	stroke:none;
+	stroke-width:0;
+}
+
+
+g#connections path {
+	fill:none !important;
+	stroke:#815d43;
+	stroke-width:2;
+}
+.slave rect,
+.slave circle,
+path.slave {
+	stroke:#CC1559 !important;
+	fill:#CC1559 !important;
+}
+.war rect,
+.war circle,
+path.war {
+	stroke:#3399FF !important;
+	fill:#3399FF !important;
+}
+.labour rect,
+.labour circle,
+path.labour {
+	stroke:#8fd4d9 !important;
+	fill:#8fd4d9 !important;
+}
+.trafficking rect,
+.trafficking circle,
+path.trafficking {
+	stroke:#FFCB35 !important;
+	fill:#FFCB35 !important;
+}
+.law rect,
+.law circle,
+path.law {
+	stroke:#b0f402 !important;
+	fill:#b0f402 !important;
+}
+g.detailed-costs {
+	opacity: 0;
+	display: none;
+	-webkit-transition: opacity 1000ms ease;
+	-moz-transition: opacity 1000ms ease;
+    -ms-transition: opacity 1000ms ease;
+    -o-transition: opacity 1000ms ease;
+	transition: opacity 1000ms ease;	
+}
+g.detailed-costs.selected {
+	display: block;
+	opacity: 1;
+}
+g.detailed-cost line {
+	fill:none;
+	stroke:#fff;
+	stroke-width:1;
+	shape-rendering: crispEdges;	
+}
+g.detailed-cost rect {
+	fill-opacity:0.7;
+	stroke-width:0;
+}
+g.detailed-cost rect.bg {
+	fill-opacity:0;
+}
+g.detailed-cost line.l2t,
+g.detailed-cost line.l2b {
+	display: none;
+}
+g.detailed-cost line.l2t {
+	stroke-dasharray: 1, 3;
+	stroke:#999;
+}
+
+g.detailed-cost line.l2b {
+	stroke-dasharray: 1, 3;
+	stroke:#999;
+}
+g.detailed-cost:hover line.l2t,
+g.detailed-cost:hover line.l2b {
+	display: block;
+}
+
+#contents {
+	width:960px;
+	margin:0px auto 20px;
+}
+
+#source {
+	margin:10px 0;
+}
+
+#footer {
+	margin:10px 0;
+}

@@ -1,0 +1,218 @@
+html,body {
+	margin:0;
+	padding:0;
+}
+body {
+	background-color: black;
+}
+h1 {
+	font-family: 'Raleway', serif;
+	font-size: 30px;
+	font-weight:300;
+	margin: 0;
+	margin-bottom: 30px;
+	padding: 0;
+	text-align: center;
+	color:#fff;
+	text-transform: uppercase;
+}
+#costs {
+	position: relative;
+}
+#headers {
+	
+	position: absolute;
+	background-color: #000;
+	top:215px;
+	height:60px;
+	width: 100%;
+}
+.fixed #headers {
+	position: fixed;
+	top:0px;
+}
+#headers ul {
+	width: 910px;
+	height:60px;
+	padding: 0;
+	list-style: none;
+	margin: 0 auto;
+}
+#headers ul li {
+	float: left;
+	width:20%;
+	text-align:center;
+	text-transform: uppercase;
+	color: #eee;
+	font-family: 'Raleway', serif;
+	font-size: 16px;
+	font-weight: 300;
+}
+#headers ul li span {
+	font-size:14px;
+	color:#ddd;
+}
+#headers ul li i {
+	font-size:16px;
+	color:#888;
+}
+#costs {
+	width:900px;
+	margin: 0 auto;
+}
+svg {
+	
+}
+
+svg text {
+	font-family: 'Raleway', serif;
+	font-size: 15px;
+}
+svg text.gender {
+	font-family: 'gender';
+	font-weight: 400;
+	fill: #999;
+	font-size: 16px;
+	text-anchor: middle;
+}
+g.age text.title {
+	
+}
+line.axis {
+	fill:none;
+	stroke:#333;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+path.avg {
+	fill:none;
+	stroke:#000;
+	stroke-width:2;
+	stroke-opacity:0.5;
+}
+g.cost circle,
+g.cost rect {
+	fill:#815d43;
+	stroke:none;
+	stroke-width:0;
+	fill-opacity:0.7;
+
+	-webkit-transition: fill-opacity 3000ms ease;
+	-moz-transition: fill-opacity 3000ms ease;
+    -ms-transition: fill-opacity 3000ms ease;
+    -o-transition: fill-opacity 3000ms ease;
+	transition: fill-opacity 3000ms ease;
+
+}
+g.cost.hidden circle,
+g.cost.hidden rect {
+	fill-opacity:0;
+}
+
+g.costs line {
+	fill:none;
+	stroke:#aaa;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+g.cost rect.joint {
+	fill:#fff !important;
+}
+
+g#xaxis path {
+	fill:none;
+	stroke:#999;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+
+g#xaxis .tick line {
+	fill:none;
+	stroke:#999;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+}
+g#xaxis text {
+	fill:#999;
+	font-size:13px;
+}
+
+g#yaxis path {
+	fill:none;
+	stroke:none;
+}
+
+g#yaxis .tick line {
+	fill:none;
+	stroke:none;
+}
+
+g#yaxis text {
+	text-transform: uppercase;
+	fill:#eee;
+	font-size: 16px;
+	text-anchor:middle;
+	font-weight: 300;
+}
+g#yaxis text.period {
+	font-size:14px;
+	color:#ddd;
+}
+g#grid line {
+	fill:none;
+	stroke:#666;
+	stroke-width:1;
+	shape-rendering: crispEdges;
+	stroke-dasharray: 1, 5;
+}
+
+g#types .type text {
+	text-transform: uppercase;
+	fill:#eee;
+	font-size: 16px;
+	text-anchor:middle;
+	font-weight: 300;
+}
+
+g#types .type rect {
+	fill:#815d43;
+	stroke:none;
+	stroke-width:0;
+}
+
+
+g#connections path {
+	fill:none !important;
+	stroke:#815d43;
+	stroke-width:2;
+}
+.slave rect,
+.slave circle,
+path.slave {
+	stroke:#CC1559 !important;
+	fill:#CC1559 !important;
+}
+.war rect,
+.war circle,
+path.war {
+	stroke:#3399FF !important;
+	fill:#3399FF !important;
+}
+.labour rect,
+.labour circle,
+path.labour {
+	stroke:#8fd4d9 !important;
+	fill:#8fd4d9 !important;
+}
+.trafficking rect,
+.trafficking circle,
+path.trafficking {
+	stroke:#FFCB35 !important;
+	fill:#FFCB35 !important;
+}
+.law rect,
+.law circle,
+path.law {
+	stroke:#b0f402 !important;
+	fill:#b0f402 !important;
+}
