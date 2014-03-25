@@ -296,24 +296,9 @@ d3.csv("data/humancost.csv",function(d){
 							clearTimeout(tm);
 						}
 
-						dialog.price.html((d.l_h!="")?d.l_h:price_format(d.inflation_adjusted));
-						dialog.oprice.html(d.original_cost?"(original cost "+d.original_cost+")":"&nbsp;");
-						dialog.details.html(d.detail);
-						dialog.gender_where_when.html(
-								(d.gender_id!="b"?d.gender+", ":"")
-								+
-								d.culture_context+", "
-								+
-								d.when
-						);
-						dialog.note.html(d.note);
+						showDialog(d);
 
-						dialog.el.style({
-							"display":"block",
-							"left":(xscale(d.inflation_adjusted)-150+margins.left+padding.left)+"px",
-							"bottom":((HEIGHT-yscale(d.age)-margins.top-padding.top+20)+(details.getDelta(d.age)))+"px"
-						})
-						.classed("expanded",false)
+						
 					})
 					.on("mouseout",function(d){
 						tm=setTimeout(function(){
@@ -338,6 +323,27 @@ d3.csv("data/humancost.csv",function(d){
 		.on("click",function(d){
 			dialog.el.classed("expanded",true);
 		})
+
+	function showDialog(d){
+		dialog.price.html((d.l_h!="")?d.l_h:price_format(d.inflation_adjusted));
+		dialog.oprice.html(d.original_cost?"(original cost "+d.original_cost+")":"&nbsp;");
+		dialog.details.html(d.detail);
+		dialog.gender_where_when.html(
+				(d.gender_id!="b"?d.gender+", ":"")
+				+
+				d.culture_context+", "
+				+
+				d.when
+		);
+		dialog.note.html(d.note);
+
+		dialog.el.style({
+			"display":"block",
+			"left":(xscale(d.inflation_adjusted)-150+margins.left+padding.left)+"px",
+			"bottom":((HEIGHT-yscale(d.age)-margins.top-padding.top+20)+(details.getDelta(d.age)))+"px"
+		})
+		.classed("expanded",false)
+	}
 
 	costs
 		.append("line")
@@ -479,7 +485,7 @@ d3.csv("data/humancost.csv",function(d){
 			.attr("x",-10)
 			.attr("y",-30)
 			.style("text-anchor","start")
-			.text("HOW TO READ:");	
+			.text("HOW TO READ IT");	
 
 	var ageLabels=yaxis.selectAll("g")
 			.data(ages.map(function(d){return d.key}))
@@ -598,10 +604,16 @@ d3.csv("data/humancost.csv",function(d){
 								return c.age==d.age && c.inflation_adjusted==d.inflation_adjusted && d.detail==c.detail;
 							})
 							.classed("hover",true)
+							.each(function(c){
+								showDialog(c);
+							})
 					})
 					.on("mouseout",function(d){
 						costs
 							.classed("hover",false)
+					})
+					.on("click",function(d){
+						dialog.el.classed("expanded",true);
 					})
 
 		detailedCosts

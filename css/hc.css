@@ -335,6 +335,9 @@ g.detailed-costs.selected {
 	display: block;
 	opacity: 1;
 }
+g.detailed-cost {
+	cursor: pointer;
+}
 g.detailed-cost line {
 	fill:none;
 	stroke:#fff;
@@ -349,8 +352,11 @@ g.detailed-cost:hover rect {
 	fill-opacity:1;
 }
 g.detailed-cost rect.bg {
-	fill:#333 !important;
+	fill:#444 !important;
 	fill-opacity:0;
+}
+g.detailed-cost:hover rect.bg {
+	fill-opacity:0.2;
 }
 g.detailed-cost line.l2t,
 g.detailed-cost line.l2b {
