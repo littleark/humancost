@@ -36,7 +36,7 @@ d3.csv("data/humancost.csv",function(d){
 	
 	
 
-	console.log(data);
+	//console.log(data);
 
 	var WIDTH=window.innerWidth-20,
 		HEIGHT=window.innerHeight-115;
@@ -135,8 +135,8 @@ d3.csv("data/humancost.csv",function(d){
 		orders[d.age]++;
 	})
 	*/
-	console.log("______________________")
-	console.log(ages)
+	//console.log("______________________")
+	//console.log(ages)
 	
 	var date_extents=d3.extent(data,function(d){return d.date});
 
@@ -806,7 +806,7 @@ d3.csv("data/humancost.csv",function(d){
 		}
 
 		this.getDelta=function(age) {
-			console.log(delta)
+			//console.log(delta)
 			if(age && index>-1) {
 				return (d3.keys(agesNames).indexOf(age)<=index)?delta:0;
 			}
@@ -852,7 +852,7 @@ d3.csv("data/humancost.csv",function(d){
 
 						delta=(delta<50)?50:delta;
 
-						console.log("SELECTED",d)
+						//console.log("SELECTED",d)
 						return 0;
 					}
 					return 0;
@@ -1179,8 +1179,8 @@ d3.csv("data/humancost.csv",function(d){
 
 			types_boxes
 					.filter(function(d){
-						console.log("@@@@@@@@@@@@@@@@@@@",t,d.id)
-						console.log(this)
+						//console.log("@@@@@@@@@@@@@@@@@@@",t,d.id)
+						//console.log(this)
 						return d.id!=t;
 					})
 					.classed("dimmed",true);
