@@ -80,6 +80,12 @@ body {
 	color:inherit;
 	font-size: 60px;
 }
+.page .next a:hover {
+	color:gold;
+}
+.page.gold .next a:hover {
+	color:black;
+}
 .page h1 {
 	font-size:40px;
 	font-weight: 700;
@@ -109,7 +115,23 @@ body {
 	background-color: gold;
 	color:#000;
 }
-
+.page span.link {
+	position: absolute;
+	display: block;
+	text-align: center;
+	height: 15px;
+	width: 100px;
+	left:50%;
+	margin-left:-50px;
+	top: 5px;
+	text-align: center;
+	color:white;
+	text-decoration: none;
+	font-size:11px;
+}
+.page.gold .link {
+	color:black;
+}
 #slides.last #p5 {
 	overflow: visible;
 }
