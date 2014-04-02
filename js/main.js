@@ -515,11 +515,11 @@ d3.csv("data/humancost.csv",function(d){
 	legend.append("text")
 			.attr("x",lw)
 			.attr("y",11)
-			.text("MIN");
+			.text("MAX");
 	legend.append("text")
 			.attr("x",0)
 			.attr("y",11)
-			.text("MAX");
+			.text("MIN");
 	legend.append("text")
 			.attr("x",lw/2)
 			.attr("y",11)
