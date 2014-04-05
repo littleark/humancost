@@ -331,6 +331,9 @@ g#xaxis .tick line {
 	stroke-width:1;
 	shape-rendering: crispEdges;
 }
+g#xaxis .tick.minor line {
+	stroke:#444;
+}
 g#xaxis text {
 	fill:#999;
 	font-size:13px;
@@ -362,6 +365,7 @@ g#yaxis text {
 g#yaxis text.period {
 	font-size:14px;
 	color:#ddd;
+	text-transform: none;
 }
 g#yaxis g.title {
 	cursor: pointer;

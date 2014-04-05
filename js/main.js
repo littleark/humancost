@@ -81,7 +81,7 @@ d3.csv("data/humancost.csv",function(d){
 		},
 		"modern":{
 			name:"Today",
-			age:"2000"
+			age:"2000s"
 		}
 	};
 	
@@ -456,14 +456,44 @@ d3.csv("data/humancost.csv",function(d){
 	
 	var xAxis = d3.svg.axis()
 					.orient("bottom")
-					//.ticks(20, ",.1s$")
-					.tickValues([1,10,100,1000,10000,100000])
-					.tickFormat(price_format)
+					.ticks(20, ",.1s$")
+					//.tickValues([1,10,100,1000,10000,100000])
+					.tickFormat(formatMoney)
     				.scale(xscale)
 
-    
+    function formatMoney(d) {
+    	var values=[1,10,100,1000,10000,100000];
+
+    	if(values.indexOf(d)>-1) {
+    		return price_format(d);
+    	}
+
+    	return "";
+
+		
+	}
+
 	xaxis.call(xAxis);
 	
+	xaxis.selectAll(".tick")
+			.classed("minor",function(d){
+				var values=[1,10,100,1000,10000,100000];
+				if(values.indexOf(d)>-1) {
+		    		return false;
+		    	}
+
+		    	return true;
+			})
+			.select("line")
+				.attr("y2",function(d){
+					var values=[1,10,100,1000,10000,100000];
+					if(values.indexOf(d)>-1) {
+			    		return 8;
+			    	}
+
+			    	return 5;		
+				})
+
 	xaxis.append("text")
 			.attr("x",-5)
 			.attr("y",40)
@@ -547,7 +577,7 @@ d3.csv("data/humancost.csv",function(d){
 				.append("g")
 				.attr("class","title")
 				.attr("transform",function(d){
-					return "translate(0,"+(yscale(d)-5)+")"
+					return "translate(0,"+(yscale(d)-10)+")"
 				})
 				.on("click",function(d){
 					var $this=d3.select(this),
