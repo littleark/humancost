@@ -805,7 +805,7 @@ d3.csv("data/humancost.csv",function(d){
 				.transition()
 				.duration(DURATION)
 				.attr("transform",function(d){
-					return "translate(0,"+(yscale(d)-5+delta)+")"
+					return "translate(0,"+(yscale(d)-10+delta)+")"
 				})
 			grid
 				.transition()
