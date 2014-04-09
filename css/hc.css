@@ -13,6 +13,9 @@ html,body {
 	height: 100%;
 }
 a {
+	color:#8fd4d9;
+}
+a:hover {
 	color:#CC1559;
 }
 ::-webkit-scrollbar-thumb:vertical { width:10px; height:10px; background-color: #666; }
@@ -604,7 +607,6 @@ g#legend circle {
 }
 #contents a {
 	text-decoration: none;
-	color:#8fd4d9;
 }
 .paragraph {
 	margin-bottom:30px;
@@ -656,32 +658,46 @@ g#legend circle {
 	float:left;
 	margin-right: 10px;
 }
-#footer .social {
+.social {
 	text-align: center;
 	font-size: 23px;
-	position: relative;
 	width: 90px;
 	height: 23px;
+}
+.social.social-top {
+	position: absolute;
+	right:20px;
+	top:20px;
+	font-size:20px;
+}
+#footer .social {
+	position: relative;
 	margin: 10px auto;
 }
-#footer .social a {
+#footer .social a,
+.social-top a {
 	text-decoration: none;
-	font-size: 13px;
+	font-size: 11px;
 	color: #000;
 	background-color: #999;
 	-webkit-border-radius: 11px;
 	border-radius: 11px;
-	width: 23px;
-	height: 23px;
-	line-height: 23px;
+	width: 19px;
+	height: 20px;
+	line-height: 20px;
 	display: block;
 	float: left;
 	margin: 0 3px;
 }
-.no-touch #footer .social a:hover {
-	background-color:gold;
+.social-top a {
+	background-color: #666;
 }
-#footer .social a span {
+#footer .social a:hover,
+.social-top a:hover {
+	background-color:#CC1559;
+}
+#footer .social a span,
+.social-top a span {
 	display: block;
 	font-size: 10px;
 	font-weight: normal;
